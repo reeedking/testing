@@ -1,7 +1,9 @@
 package com.automated.testing.service.impl;
 
+import com.automated.testing.mapper.StudentMapper;
 import com.automated.testing.model.Student;
 import com.automated.testing.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +15,9 @@ import java.util.List;
  */
 @Service
 public class StudentServiceImpl implements StudentService {
+
+    @Autowired
+    private StudentMapper studentMapper;
     
     @Override
     public Student getStudentById(String id) {
@@ -24,7 +29,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> getStudents() {
-        return null;
+        return studentMapper.selectList(null);
     }
 
     @Override
