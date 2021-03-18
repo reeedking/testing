@@ -2,6 +2,7 @@ package com.automated.testing.service.impl;
 
 import com.automated.testing.model.Student;
 import com.automated.testing.service.StudentService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ import java.util.List;
  * @date  2021/3/18
  * @description
  */
+@Service
 public class StudentServiceImpl implements StudentService {
     
     @Override
