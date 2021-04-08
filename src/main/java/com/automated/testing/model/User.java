@@ -9,8 +9,8 @@ import org.apache.ibatis.type.Alias;
  * @description 学生实体类
  */
 @Data
-@Alias("Student")
-public class Student {
+@Alias("User")
+public class User {
 
     private String id;
 

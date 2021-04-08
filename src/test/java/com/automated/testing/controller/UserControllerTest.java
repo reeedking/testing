@@ -17,17 +17,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-public class StudentControllerTest {
+public class UserControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
     @Autowired
-    private StudentController studentController;
+    private UserController userController;
 
     @Test
     public void testNotNull() {
-        assertThat(studentController, notNullValue());
+        assertThat(userController, notNullValue());
     }
 
     @Test

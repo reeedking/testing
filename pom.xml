@@ -50,7 +50,7 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
-
+        <!-- oracle 数据库依赖 -->
 <!--        <dependency>-->
 <!--            <groupId>com.oracle</groupId>-->
 <!--            <artifactId>ojdbc6</artifactId>-->
