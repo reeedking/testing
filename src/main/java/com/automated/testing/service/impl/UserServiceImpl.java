@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author reeedking
@@ -21,10 +22,7 @@ public class UserServiceImpl implements UserService {
     
     @Override
     public User getUserById(String id) {
-        User user = new User();
-        user.setId("1");
-        user.setName("wh");
-        return user;
+        return userMapper.selectById(id);
     }
 
     @Override
@@ -34,17 +32,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int insertUser(User user) {
-        return 0;
+        return userMapper.insert(user);
     }
 
     @Override
     public int updateUser(User user) {
-        return 0;
+        return userMapper.updateById(user);
     }
 
     @Override
     public int deleteUserById(String id) {
-        return 0;
+        return userMapper.deleteById(id);
     }
 
 }

@@ -31,44 +31,44 @@ public class UserControllerTest {
     }
 
     @Test
-    public void getStudentById() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/students/{id}", 1)
+    public void testGetUserById() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/users/{id}", 1)
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(jsonPath("name", is("wh")))
+                .andExpect(jsonPath("name", is("Jone")))
                 .andDo(MockMvcResultHandlers.print());
     }
 
     @Test
-    public void listStudents() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/students")
+    public void testListUsers() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/users")
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(MockMvcResultHandlers.print());
     }
 
     @Test
-    void insertStudent() throws Exception {
-        String requestBody = "{\"id\":1, \"name\":\"wh\"}";
-        mvc.perform(MockMvcRequestBuilders.post("/students")
+    void testInsertUser() throws Exception {
+        String requestBody = "{\"id\":\"6\",\"name\":\"wh\",\"age\":18,\"email\":\"reeedking@gmail.com\"}";
+        mvc.perform(MockMvcRequestBuilders.post("/users")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(requestBody))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
 
     @Test
-    void updateStudent() throws Exception {
-        String requestBody = "{\"id\":1, \"name\":\"wh\"}";
-        mvc.perform(MockMvcRequestBuilders.put("/students")
+    void testUpdateUser() throws Exception {
+        String requestBody = "{\"id\":\"6\",\"name\":\"wh\",\"age\":27,\"email\":\"reeedking@gmail.com\"}";
+        mvc.perform(MockMvcRequestBuilders.put("/users")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(requestBody))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
 
     @Test
-    void deleteStudent() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.delete("/students/{id}", 1)
+    void testDeleteUser() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.delete("/users/{id}", 6)
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
